@@ -1,0 +1,23 @@
+.show-more-btn {
+  margin: 20px 0 50px 0;
+  width: 502px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #2196f3;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  border: hidden;
+  &:hover {
+    background-color: RGBA(33, 150, 243, 0.1);
+    cursor: url('../../img/decorate/Cursor.svg'), auto;
+    color: black;
+  }
+}
+
+@media screen and (min-width: 421px) {
+}
+
+@media screen and (max-width: 420px) {
+}
