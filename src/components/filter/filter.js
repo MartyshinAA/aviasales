@@ -119,7 +119,6 @@ const Filter = () => {
       </div>
       <ul className={classes['tickets']}>{isLoading ? <Spinner /> : ticket}</ul>
       {viewTickets.length >= ticketsToShowReducer && <ShowMoreBtn />}
-      {/* <ShowMoreBtn /> */}
     </div>
   );
 };
