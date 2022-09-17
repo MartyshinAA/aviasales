@@ -15,7 +15,6 @@ const App = () => {
     const dispatch = useDispatch();
     useEffect(() => {
       dispatch(loadTickets());
-      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
   };
 

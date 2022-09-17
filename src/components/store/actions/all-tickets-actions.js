@@ -9,7 +9,7 @@ const allTicketsActions = (tickets) => ({
   tickets,
 });
 
-export const loadTickets = () => (dispatch, getState) => {
+export const loadTickets = () => (dispatch) => {
   AviasalesGetInfo().then((response) => {
     response().then((res) => {
       dispatch(isLoading(false));
