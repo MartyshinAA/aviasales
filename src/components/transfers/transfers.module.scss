@@ -68,8 +68,12 @@ ul {
   }
 }
 
-@media screen and (min-width: 421px) {
+@media screen and (min-width: 521px) {
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 520px) {
+  .transfers {
+    justify-content: center;
+    margin: 0 0 20px 0;
+  }
 }

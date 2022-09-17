@@ -42,14 +42,20 @@ const Filter = () => {
         (ticket) => ticket.segments[0].stops.length === 3 && ticket.segments[1].stops.length === 3
       );
       transfersReducer[property] ? (viewTickets.three = three) : delete viewTickets.three;
+    } else {
+      console.log('Ok');
     }
   }
+
+  //пересадки
 
   if (viewTickets.all) {
     viewTickets = viewTickets.all;
   } else {
     Object.values(viewTickets).forEach((item) => viewTickets.push(...item));
   }
+
+  //сортировка
 
   if (cheapest) {
     //самый дешёвый
@@ -62,13 +68,21 @@ const Filter = () => {
   }
 
   let ticketsOnScreeen = [...viewTickets].slice(0, ticketsToShowReducer);
-  const ticket = ticketsOnScreeen.map((ticket, idx) => {
-    return (
-      <React.Fragment key={idx}>
-        <Ticket {...ticket} />
-      </React.Fragment>
-    );
-  });
+
+  let ticket;
+  if (ticketsOnScreeen.length === 0) {
+    console.log(classes['not-found']);
+    ticket = 'Рейсов, подходящих под заданные фильтры, не найдено';
+    <>Рейсов, подходящих под заданные фильтры, не найдено</>;
+  } else {
+    ticket = ticketsOnScreeen.map((ticket, idx) => {
+      return (
+        <React.Fragment key={idx}>
+          <Ticket {...ticket} />
+        </React.Fragment>
+      );
+    });
+  }
 
   return (
     <div className={classes['filter-wrapper']}>
@@ -104,7 +118,8 @@ const Filter = () => {
         </ul>
       </div>
       <ul className={classes['tickets']}>{isLoading ? <Spinner /> : ticket}</ul>
-      {ticketsOnScreeen <= allTicketsReducer && <ShowMoreBtn />}
+      {viewTickets.length >= ticketsToShowReducer && <ShowMoreBtn />}
+      {/* <ShowMoreBtn /> */}
     </div>
   );
 };
