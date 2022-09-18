@@ -110,9 +110,10 @@ const Filter = () => {
             <button
               name="optimal"
               className={classNames('optimal', { [classes.active]: optimal })}
+              disabled
               onClick={() => dispatch(optimalActions())}
             >
-              ОПТИМАЛЬНЫЙ
+              ОПТИМАЛЬНЫЙ (BUTTON IS UNDER CONSTRUCTION)
             </button>
           </li>
         </ul>
