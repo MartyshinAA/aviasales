@@ -1,7 +1,7 @@
 import 'normalize.css';
 import './app.scss';
 
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Provider, useDispatch } from 'react-redux';
 
 import { store } from '../store/store';

@@ -15,7 +15,7 @@ const Filter = () => {
   const { cheapest, fastest, optimal } = useSelector((state) => state.filterReducer);
   const { allTicketsReducer } = useSelector((state) => state);
   const { ticketsToShowReducer } = useSelector((state) => state);
-  const { isLoading } = useSelector((state) => state);
+  const { isLoadingReducer } = useSelector((state) => state);
 
   let viewTickets = [];
 
@@ -42,9 +42,7 @@ const Filter = () => {
         (ticket) => ticket.segments[0].stops.length === 3 && ticket.segments[1].stops.length === 3
       );
       transfersReducer[property] ? (viewTickets.three = three) : delete viewTickets.three;
-    } else {
-      console.log('Ok');
-    }
+    } 
   }
 
   //пересадки
@@ -118,7 +116,7 @@ const Filter = () => {
           </li>
         </ul>
       </div>
-      <ul className={classes['tickets']}>{isLoading ? <Spinner /> : ticket}</ul>
+      <ul className={classes['tickets']}>{isLoadingReducer ? <Spinner /> : ticket}</ul>
       {viewTickets.length >= ticketsToShowReducer && <ShowMoreBtn />}
     </div>
   );

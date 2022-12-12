@@ -1,4 +1,3 @@
-// import { useMemo } from 'react';
 import humanizeDuration from 'humanize-duration';
 
 import classes from './ticket.module.scss';

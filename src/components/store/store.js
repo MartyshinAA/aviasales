@@ -1,13 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import { isLoading } from './reducers/is-loading-reducer';
+import { isLoadingReducer } from './reducers/is-loading-reducer';
 import { allTicketsReducer } from './reducers/all-tickets-reducer';
 import { ticketsToShowReducer } from './reducers/tickets-to-show-reducer';
 import { filterReducer } from './reducers/filter-reducers';
 import { transfersReducer } from './reducers/transfers-reducer';
 
 const preloadedState = {
-  isLoading: true,
+  isLoadingReducer: true,
   allTicketsReducer: [],
   ticketsToShowReducer: 5,
   filterReducer: {
@@ -25,7 +25,7 @@ const preloadedState = {
 };
 
 export const store = configureStore({
-  reducer: { isLoading, allTicketsReducer, ticketsToShowReducer, filterReducer, transfersReducer },
+  reducer: { isLoadingReducer, allTicketsReducer, ticketsToShowReducer, filterReducer, transfersReducer },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       thunk: true,
